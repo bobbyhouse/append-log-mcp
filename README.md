@@ -49,10 +49,9 @@ Run via stdio:
 
 ```bash
 docker run -i --rm \
-  -e APPEND_LOG_FILE=/data/log.jsonl \
   -e APPEND_LOG_TOOLS=append,query \
   -v append-log-data:/data \
-  append-log-mcp
+  roberthouse224/append-log-mcp
 ```
 
 ### Docker Compose
@@ -73,10 +72,9 @@ The compose file mounts a named volume at `/data` and sets both env vars.
       "args": [
         "run", "-i", "--rm",
         "-v", "append-log-data:/data",
-        "append-log-mcp"
+        "roberthouse224/append-log-mcp"
       ],
       "env": {
-        "APPEND_LOG_FILE": "/data/log.jsonl",
         "APPEND_LOG_TOOLS": "append,query"
       }
     }

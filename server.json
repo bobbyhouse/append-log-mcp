@@ -7,7 +7,7 @@
   "packages": [
     {
       "registryType": "oci",
-      "identifier": "udsrvbest/append-log-mcp:1.0.0",
+      "identifier": "roberthouse224/append-log-mcp:1.0.0",
       "transport": { "type": "stdio" },
       "runtimeHint": "docker",
       "runtimeArguments": [
@@ -21,7 +21,7 @@
         {
           "name": "APPEND_LOG_FILE",
           "description": "Path to the JSONL log file inside the container.",
-          "isRequired": true,
+          "isRequired": false,
           "default": "/data/log.jsonl"
         },
         {
