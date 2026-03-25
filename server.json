@@ -20,7 +20,7 @@
       "environmentVariables": [
         {
           "name": "APPEND_LOG_FILE",
-          "description": "Path to the JSONL log file inside the container.",
+          "description": "Path to the JSONL log file inside the container. Defaults to append-log.jsonl in the current working directory.",
           "isRequired": false,
           "default": "/data/log.jsonl"
         },
