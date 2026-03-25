@@ -4,14 +4,17 @@ import (
 	"testing"
 )
 
-// INVARIANT: APPEND_LOG_FILE is required; missing returns error.
-func TestLoadConfigMissingLogFile(t *testing.T) {
+// INVARIANT: APPEND_LOG_FILE defaults to "append-log.jsonl" when not set.
+func TestLoadConfigDefaultLogFile(t *testing.T) {
 	t.Setenv("APPEND_LOG_FILE", "")
 	t.Setenv("APPEND_LOG_TOOLS", "append,query")
 
-	_, err := LoadConfig()
-	if err == nil {
-		t.Error("expected error when APPEND_LOG_FILE is not set")
+	cfg, err := LoadConfig()
+	if err != nil {
+		t.Fatalf("LoadConfig: %v", err)
+	}
+	if cfg.LogFile != "append-log.jsonl" {
+		t.Errorf("LogFile = %q, want %q", cfg.LogFile, "append-log.jsonl")
 	}
 }
 

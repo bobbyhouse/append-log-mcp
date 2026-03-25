@@ -13,7 +13,7 @@ A generic append-only log MCP server. Agents write timestamped JSON entries to a
 
 | Variable | Required | Description |
 |---|---|---|
-| `APPEND_LOG_FILE` | Yes | Path to the JSONL file (e.g. `/data/log.jsonl`) |
+| `APPEND_LOG_FILE` | No | Path to the JSONL file (default: `append-log.jsonl` in cwd) |
 | `APPEND_LOG_TOOLS` | Yes | Comma-separated tools to expose: `append`, `query` |
 
 ## Running

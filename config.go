@@ -8,7 +8,7 @@ import (
 
 // Config holds the server configuration, read from environment variables:
 //
-//	APPEND_LOG_FILE    Path to the JSONL log file (required)
+//	APPEND_LOG_FILE    Path to the JSONL log file (default: append-log.jsonl in cwd)
 //	APPEND_LOG_TOOLS   Comma-separated list of tools to expose (required)
 type Config struct {
 	LogFile string
@@ -21,7 +21,7 @@ func LoadConfig() (Config, error) {
 
 	cfg.LogFile = os.Getenv("APPEND_LOG_FILE")
 	if cfg.LogFile == "" {
-		return Config{}, fmt.Errorf("APPEND_LOG_FILE is required")
+		cfg.LogFile = "append-log.jsonl"
 	}
 
 	if v := os.Getenv("APPEND_LOG_TOOLS"); v != "" {
