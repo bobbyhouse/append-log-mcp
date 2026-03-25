@@ -1,0 +1,11 @@
+services:
+  append-log:
+    build: .
+    environment:
+      APPEND_LOG_FILE: /data/log.jsonl
+      APPEND_LOG_TOOLS: append,query
+    volumes:
+      - log-data:/data
+
+volumes:
+  log-data:

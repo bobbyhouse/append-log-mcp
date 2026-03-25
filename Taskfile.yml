@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - CGO_ENABLED=0 go build -o build/append-log-mcp .
+    generates:
+      - build/append-log-mcp
+
+  test:
+    cmds:
+      - go test ./...

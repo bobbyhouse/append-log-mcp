@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.udsrvbest/append-log-mcp",
+  "title": "Append Log MCP",
+  "description": "A generic append-only log MCP server. Persist timestamped JSON entries and query them by recency.",
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "oci",
+      "identifier": "udsrvbest/append-log-mcp:1.0.0",
+      "transport": { "type": "stdio" },
+      "runtimeHint": "docker",
+      "runtimeArguments": [
+        { "type": "positional", "value": "run" },
+        { "type": "named", "name": "-i" },
+        { "type": "named", "name": "--rm" },
+        { "type": "named", "name": "-v" },
+        { "type": "positional", "value": "append-log-data:/data" }
+      ],
+      "environmentVariables": [
+        {
+          "name": "APPEND_LOG_FILE",
+          "description": "Path to the JSONL log file inside the container.",
+          "isRequired": true,
+          "default": "/data/log.jsonl"
+        },
+        {
+          "name": "APPEND_LOG_TOOLS",
+          "description": "Comma-separated list of tools to expose. Available: append, query",
+          "isRequired": true,
+          "placeholder": "append,query"
+        }
+      ]
+    }
+  ]
+}
