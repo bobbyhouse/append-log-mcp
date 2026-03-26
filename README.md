@@ -71,12 +71,10 @@ The compose file mounts a named volume at `/data` and sets both env vars.
       "command": "docker",
       "args": [
         "run", "-i", "--rm",
+        "-e", "APPEND_LOG_TOOLS=append,query",
         "-v", "append-log-data:/data",
         "roberthouse224/append-log-mcp"
-      ],
-      "env": {
-        "APPEND_LOG_TOOLS": "append,query"
-      }
+      ]
     }
   }
 }

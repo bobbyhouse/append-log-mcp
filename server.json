@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.udsrvbest/append-log-mcp",
+  "name": "io.github.bobbyhouse/append-log-mcp",
   "title": "Append Log MCP",
   "description": "A generic append-only log MCP server. Persist timestamped JSON entries and query them by recency.",
   "version": "1.0.0",

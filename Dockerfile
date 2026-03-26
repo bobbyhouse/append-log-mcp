@@ -9,7 +9,7 @@ RUN CGO_ENABLED=0 go build -o append-log-mcp .
 
 FROM dhi.io/alpine-base:3.23
 COPY --from=builder /app/append-log-mcp /append-log-mcp
-LABEL io.modelcontextprotocol.server.name="io.github.udsrvbest/append-log-mcp"
+LABEL io.modelcontextprotocol.server.name="io.github.bobbyhouse/append-log-mcp"
 
 # Create /data owned by nonroot before VOLUME declaration.
 # chown after VOLUME is a no-op in Docker, so this must come first.
